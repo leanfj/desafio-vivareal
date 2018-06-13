@@ -5,33 +5,17 @@ import './App.css';
 //Api
 import { listOne, listLimit, listAll } from './api/Api';
 
-//Plugins
-import {
-  Button,
-  Grid,
-  Row,
-  Col,
-  FormGroup,
-  FormControl
-} from 'react-bootstrap';
-
 class App extends Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.state = {
-      id: ''
-    };
+    this.state = {};
   }
 
-  handleChange(e) {
-    this.setState({ id: e.target.value });
-  }
   consultAll() {
     listAll();
   }
   consultOne() {
-    let argId = this.state.id;
+    let argId = this.refs.id.value;
     listOne(argId);
   }
   consultWithLimit() {
@@ -48,28 +32,14 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Spotippos</h1>
         </header>
-        <Grid>
-          <Row className="show-grid">
-            <Col xs={12}>
-              <FormGroup>
-                <FormControl
-                  type="text"
-                  ref="id"
-                  value={this.state.id}
-                  onChange={this.handleChange}
-                />
-                <Button
-                  bsStyle="primary"
-                  onClick={() => {
-                    this.consultOne();
-                  }}
-                >
-                  Consulta Um
-                </Button>
-              </FormGroup>
-            </Col>
-          </Row>
-        </Grid>
+        <input type="text" ref="id" defaultValue="1" />
+        <button
+          onClick={() => {
+            this.consultOne();
+          }}
+        >
+          Consulta Um
+        </button>
       </div>
     );
   }
