@@ -5,6 +5,16 @@ import './App.css';
 //Api
 import { listOne, listLimit, listAll } from './api/Api';
 
+//Plugins
+import {
+  Button,
+  Grid,
+  Row,
+  Col,
+  FormGroup,
+  FormControl
+} from 'react-bootstrap';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -33,37 +43,39 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Spotippos</h1>
         </header>
-        <div>
-          <button
-            className="App-button"
-            onClick={() => {
-              this.consultWithLimit();
-            }}
-          >
-            Consulta
-          </button>
-          <input
-            className="App-input"
-            type="text"
-            ref="page"
-            defaultValue="1"
-          />
-          <input
-            className="App-input"
-            type="text"
-            ref="limit"
-            defaultValue="10"
-          />
-        </div>
-        <input className="App-input" type="text" ref="id" />
-        <button
-          className="App-button"
-          onClick={() => {
-            this.consultOne();
-          }}
-        >
-          Consulta Um
-        </button>
+        <Grid>
+          <Row className="show-grid">
+            <Col xs={12}>
+              <FormGroup>
+                <FormControl type="text" ref="page" defaultValue="1" />
+                <FormControl type="text" ref="limit" defaultValue="10" />
+                <Button
+                  bsStyle="primary"
+                  onClick={() => {
+                    this.consultWithLimit();
+                  }}
+                >
+                  Consulta
+                </Button>
+              </FormGroup>
+            </Col>
+          </Row>
+          <Row className="show-grid">
+            <Col xs={12}>
+              <FormGroup>
+                <FormControl className="App-input" type="text" ref="id" />
+                <Button
+                  bsStyle="primary"
+                  onClick={() => {
+                    this.consultOne();
+                  }}
+                >
+                  Consulta Um
+                </Button>
+              </FormGroup>
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
