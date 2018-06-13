@@ -18,13 +18,20 @@ import {
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      id: ''
+    };
+  }
+
+  handleChange(e) {
+    this.setState({ id: e.target.value });
   }
   consultAll() {
     listAll();
   }
   consultOne() {
-    let argId = this.refs.id.value;
+    let argId = this.state.id;
     listOne(argId);
   }
   consultWithLimit() {
@@ -32,9 +39,7 @@ class App extends Component {
     let argLimit = this.refs.limit.value;
     listLimit(argPage, argLimit);
   }
-  componentDidMount() {
-    this.consultAll();
-  }
+  componentDidMount() {}
 
   render() {
     return (
@@ -47,23 +52,12 @@ class App extends Component {
           <Row className="show-grid">
             <Col xs={12}>
               <FormGroup>
-                <FormControl type="text" ref="page" defaultValue="1" />
-                <FormControl type="text" ref="limit" defaultValue="10" />
-                <Button
-                  bsStyle="primary"
-                  onClick={() => {
-                    this.consultWithLimit();
-                  }}
-                >
-                  Consulta
-                </Button>
-              </FormGroup>
-            </Col>
-          </Row>
-          <Row className="show-grid">
-            <Col xs={12}>
-              <FormGroup>
-                <FormControl className="App-input" type="text" ref="id" />
+                <FormControl
+                  type="text"
+                  ref="id"
+                  value={this.state.id}
+                  onChange={this.handleChange}
+                />
                 <Button
                   bsStyle="primary"
                   onClick={() => {
