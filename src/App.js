@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+//components
+import Menu from './components/Menu/Menu';
+
 //Api
 import { listOne, listLimit, listAll } from './api/Api';
 
@@ -30,16 +33,19 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Spotippos</h1>
+          <h1 className="App-title">SPOTIPPOS - ANÚNCIOS </h1>
         </header>
-        <input type="text" ref="id" defaultValue="1" />
-        <button
-          onClick={() => {
-            this.consultOne();
-          }}
-        >
-          Consulta Um
-        </button>
+        <div className="Main">
+          <Menu />
+          <input type="text" ref="id" defaultValue="1" />
+          <button
+            onClick={() => {
+              this.consultOne();
+            }}
+          >
+            Consulta Um
+          </button>
+        </div>
       </div>
     );
   }
