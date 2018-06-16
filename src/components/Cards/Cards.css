@@ -1,0 +1,7 @@
+.App-Cards {
+  margin-top: 10px;
+  margin-right: 20px;
+  box-shadow: 2px 0px 2px 0px #00000021;
+  grid-area: Cards;
+  background-color: #f9f9f9;
+}

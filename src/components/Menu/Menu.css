@@ -1,11 +1,11 @@
 .Menu {
+  grid-area: Menu;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 5px 5px;
   width: 80px;
   background-color: #154e6e;
-  height: 100vw;
   font-size: 0.8em;
   text-align: center;
 }

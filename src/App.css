@@ -24,7 +24,11 @@
 }
 
 .Main {
-  display: flex;
+  display: grid;
+  grid-template-areas: 'Menu Filters Cards';
+  grid-template-columns: 80px 200px auto;
+  grid-gap: 20px;
+  background-color: #f3f5f7;
 }
 
 @keyframes App-logo-spin {

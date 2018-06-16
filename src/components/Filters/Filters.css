@@ -1,0 +1,6 @@
+.App-Filters {
+  margin-top: 10px;
+  box-shadow: 2px 0px 2px 0px #00000021;
+  grid-area: Filters;
+  background-color: #f9f9f9;
+}

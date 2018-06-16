@@ -4,29 +4,14 @@ import './App.css';
 
 //components
 import Menu from './components/Menu/Menu';
-
-//Api
-import { listOne, listLimit, listAll } from './api/Api';
+import Filters from './components/Filters/Filters';
+import Cards from './components/Cards/Cards';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
-
-  consultAll() {
-    listAll();
-  }
-  consultOne() {
-    let argId = this.refs.id.value;
-    listOne(argId);
-  }
-  consultWithLimit() {
-    let argPage = this.refs.page.value;
-    let argLimit = this.refs.limit.value;
-    listLimit(argPage, argLimit);
-  }
-  componentDidMount() {}
 
   render() {
     return (
@@ -37,14 +22,8 @@ class App extends Component {
         </header>
         <div className="Main">
           <Menu />
-          <input type="text" ref="id" defaultValue="1" />
-          <button
-            onClick={() => {
-              this.consultOne();
-            }}
-          >
-            Consulta Um
-          </button>
+          <Filters title="Filters" />
+          <Cards title="Cards" />
         </div>
       </div>
     );
