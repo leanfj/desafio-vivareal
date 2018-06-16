@@ -1,5 +1,6 @@
 .App-logo {
   height: 50px;
+  width: 80px;
   padding: 10px 9px;
   background-color: #3bacff;
 }
@@ -29,6 +30,7 @@
   grid-template-columns: 80px 200px auto;
   grid-gap: 20px;
   background-color: #f3f5f7;
+  position: relative;
 }
 
 @keyframes App-logo-spin {

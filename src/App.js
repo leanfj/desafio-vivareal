@@ -22,7 +22,7 @@ class App extends Component {
         </header>
         <div className="Main">
           <Menu />
-          <Filters title="Filters" />
+          <Filters />
           <Cards title="Cards" />
         </div>
       </div>

@@ -1,6 +1,29 @@
 .App-Filters {
   margin-top: 10px;
+  margin-bottom: 10px;
   box-shadow: 2px 0px 2px 0px #00000021;
   grid-area: Filters;
   background-color: #f9f9f9;
+  padding: 10px;
+  color: #5c5c5c;
+  height: 320px;
+  position: fixed;
+  left: 90px;
+  width: 210px;
+
+}
+.Input-Controls {
+  color: #c0c0c0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Input {
+  width: 80px;
+}
+.Input label {
+  font-size: .8em;
+}
+.Input input {
+  width: 100%;
 }
