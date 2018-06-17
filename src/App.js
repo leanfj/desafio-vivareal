@@ -14,8 +14,7 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
+    return <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">SPOTIPPOS - ANÚNCIOS </h1>
@@ -23,10 +22,16 @@ class App extends Component {
         <div className="Main">
           <Menu />
           <Filters />
-          <Cards title="Cards" />
+          <div className="App-Cards">
+            <Cards title="Cards" />
+            <Cards title="Cards" />
+            <Cards title="Cards" />
+            <Cards title="Cards" />
+            <Cards title="Cards" />
+            <Cards title="Cards" />
+          </div>
         </div>
-      </div>
-    );
+      </div>;
   }
 }
 
