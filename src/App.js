@@ -24,11 +24,6 @@ class App extends Component {
           <Filters />
           <div className="App-Cards">
             <Cards title="Cards" />
-            <Cards title="Cards" />
-            <Cards title="Cards" />
-            <Cards title="Cards" />
-            <Cards title="Cards" />
-            <Cards title="Cards" />
           </div>
         </div>
       </div>;

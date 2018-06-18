@@ -1,5 +1,10 @@
 import axios from 'axios';
 
+
+const api = axios.create({
+  baseURL: 'http://spotippos.vivareal.com'
+});
+
 export const listAll = () => {
   axios
     .get('http://spotippos.vivareal.com/properties')
@@ -7,27 +12,16 @@ export const listAll = () => {
       console.log(response.data);
     });
 };
-export const listLimit = (argPage, argLimit) => {
-  axios
-    .get(
-      `http://spotippos.vivareal.com/properties?page=${argPage}&limit=${argLimit}`
-    )
-    .then(function(response) {
-      console.log(response.data);
-    });
-};
 
-export const listOne = argId => {
-  axios
-    .get('http://spotippos.vivareal.com/properties/' + argId)
-    .then(function(response) {
-      console.log(response.data);
-    });
-};
+export const listLimit = (argPage, argLimit) => api.get(`properties?page=${argPage}&limit=${argLimit}`);
+
+
+export const listOne = argId => api.get('properties/' + argId);
 
 const apis = {
   listAll,
-  listOne
+  listOne,
+  listLimit
 };
 
 export default apis;
