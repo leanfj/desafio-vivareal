@@ -19,6 +19,7 @@
 .Card-Info {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .Card-Infos {
   padding: 10px;

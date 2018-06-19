@@ -4,14 +4,28 @@ import React, { Component } from 'react';
 import './Filters.css';
 
 class Filters extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      idValue: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange (e) {
+    // this.setState({idValue: e.target.value});
+    this.props.onIdChange(e.target.value);
+  }
+
   render() {
+    const idValue = this.props.idValue;
     return (
       <div className="App-Filters">
         <span>Filtro</span>
         <div className="Input-Controls">
           <div className="Input">
             <label htmlFor="Id">Id</label>
-            <input type="text" id="Id" name="Id" />
+            <input type="text" id="Id" name="Id" value={idValue} onChange={this.handleChange} />
           </div>
           <div className="Input">
             <label htmlFor="Area">Area</label>
